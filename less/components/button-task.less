@@ -1,0 +1,84 @@
+@btn-default-clr: black;
+
+@btn-task-padding-vertical: 3px;
+@btn-task-padding-horizontal: 20px;
+@btn-task-font-size: 11px;
+@btn-task-line-height: 1.1;
+@btn-task-border-radius: 6px;
+
+@btn-task-big-padding-vertical: 6px;
+@btn-task-big-padding-horizontal: 30px;
+@btn-task-big-font-size: 14px;
+@btn-task-big-line-height: 1.1;
+@btn-task-big-border-radius: 8px;
+
+
+@btn-task-border-clr: #e5e5e5;
+@btn-task-clr: black;
+@btn-task-focus-outline: #a5b1f1;
+
+@btn-task-grad-from: #f2f2f2;
+@btn-task-grad-to: #e2e2e2;
+
+@btn-task-grad-hover-from: #feffeb;
+@btn-task-grad-hover-to: #fdffcc;
+
+.btn-task-size(@padding-vertical; @padding-horizontal; @font-size; @line-height; @border-radius) {
+	padding: @padding-vertical @padding-horizontal;
+	font-size: @font-size;
+	line-height: @line-height;
+	border-radius: @border-radius;
+}
+
+.btn-task-variant(@color; @border; @from; @to; @hover-from; @hover-to) {
+	color: @color;
+	background-color: @from;
+	background-image: linear-gradient(@from, @to);
+	border-color: @border;
+
+	&:hover {
+		background-color: @hover-from;
+		background-image: linear-gradient(@hover-from, @hover-to);
+	}
+	&:active, &:focus, &:active:focus {
+		outline: none;
+	}
+	&:focus,
+	&.focus {
+		border-color: @btn-task-focus-outline;
+		box-shadow: 0 0 4px 0 @btn-task-focus-outline;
+	}
+
+	&:active,
+	&.active {
+		color: @color;
+		border-color: darken(@border, 12%);
+		background-color: @to;
+		background-image: linear-gradient(@to, @from);
+	}
+	&.disabled,
+	&[disabled],
+	fieldset[disabled] & {
+		&,
+		&:hover,
+		&:focus,
+		&.focus,
+		&:active,
+		&.active {
+			background-color: @from;
+			border-color: @border;
+		}
+	}
+}
+
+
+.btn-task {
+	.btn-task-size(@btn-task-padding-vertical, @btn-task-padding-horizontal, @btn-task-font-size, @btn-task-line-height, @btn-task-border-radius);
+	.btn-task-variant(@btn-task-clr, @btn-task-border-clr, @btn-task-grad-from, @btn-task-grad-to, @btn-task-grad-hover-from, @btn-task-grad-hover-to);
+	font-family: Verdana, Arial, sans-serif;
+	text-shadow: 0 1px 0 #FFF;
+}
+
+.btn-task-big {
+	.btn-task-size(@btn-task-big-padding-vertical, @btn-task-big-padding-horizontal, @btn-task-big-font-size, @btn-task-big-line-height, @btn-task-big-border-radius);
+}

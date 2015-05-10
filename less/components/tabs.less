@@ -1,0 +1,76 @@
+@tab-padding-horizontal:        20px;
+@tab-padding-vertical:          12px;
+@tab-link-padding:              10px 15px;
+@tab-link-bg:                   #f7f7f7;
+@tab-container-bg: @tab-link-bg;
+@tab-link-hover-bg:             #D3D3D3;
+@tab-link-clr: #888;
+@tab-link-border-clr: @tab-link-clr;
+
+@tab-disabled-link-clr:       #C3C3C3;
+@tab-disabled-link-hover-clr: #C3C3C3;
+
+.tabs {
+	.clear-ul();
+	background-color: @tab-container-bg;
+	border-bottom: 2px solid @tab-link-border-clr;
+	&:extend(.clearfix all);
+
+	> li {
+		position: relative;
+
+		@media (min-width: @screen-breakpoint) {
+			float: left;
+		}
+
+		> a {
+			position: relative;
+			display: block;
+			padding: @tab-padding-horizontal @tab-padding-vertical;
+
+			line-height: @line-height-base;
+			background-color: @tab-link-bg;
+			color: @tab-link-clr;
+			text-decoration: none;
+			
+
+			&:hover,
+			&:focus {
+				text-decoration: none;
+				color: @tab-link-clr;
+				background-color: @tab-link-hover-bg;
+			}
+		}
+
+		&.active > a {
+			&,
+			&:hover,
+			&:focus {
+				color: #888;
+				background-color: #ddd;
+				cursor: default;
+			}
+		}
+
+		// Disabled state sets text to gray and nukes hover/tab effects
+		&.disabled > a {
+			color: @tab-disabled-link-clr;
+
+			&:hover,
+			&:focus {
+				color: @tab-disabled-link-hover-clr;
+				text-decoration: none;
+				background-color: transparent;
+				cursor: not-allowed;
+			}
+		}
+	}
+}
+
+
+.tab {
+	display: none;
+	&.open {
+		display: block;
+	}
+}

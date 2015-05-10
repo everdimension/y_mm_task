@@ -1,0 +1,28 @@
+@grid-gutter: 60px;
+
+.grid {
+	.clearfix();
+}
+[class*='col-'] {
+	box-sizing: border-box;
+	float: left;
+}
+.col-half {
+	width: 100%;
+}
+
+@media (min-width: @screen-breakpoint) {
+	[class*='col-'] {
+		padding-right: @grid-gutter / 2;
+		padding-left: @grid-gutter / 2;
+		&:last-of-type {
+			padding-right: 0;
+		}
+		&:first-of-type {
+			padding-left: 0;
+		}
+	}
+	.col-half {
+		width: 50%;
+	}
+}

@@ -1,0 +1,83 @@
+@progress-bar-bg: white;
+@progress-bar-clr: black;
+@progress-bar-height: 13px;
+@progress-bar-font-size: 9px;
+@progress-bar-border-radius: @progress-bar-height;
+
+@progress-clr-edge: #87FF54;
+@progress-clr-mid: #29CF18;
+
+.progress-bar-variant(@color) {
+  background-color: @color;
+}
+
+
+.progress-bar-holder {
+	position: relative;
+	font-family: Verdana, Arial, sans-serif;
+	font-size: @progress-bar-font-size;
+	line-height: @progress-bar-height;
+	color: @progress-bar-clr;
+	text-align: center;
+	height: @progress-bar-height;
+	background-color: @progress-bar-bg;
+	border-radius: @progress-bar-border-radius;
+	box-shadow: inset 0 1px 3px rgba(0,0,0,.3);
+	overflow: hidden;
+	&:after {
+		content: attr(aria-valuetext);
+		position: absolute;
+		left: 0;
+		width: 100%;
+	}
+}
+
+// Bar of progress
+.progress-bar {
+	float: left;
+	width: 0;
+	height: 100%;
+	background-color: @progress-clr-edge;
+	background-image: linear-gradient(@progress-clr-edge, @progress-clr-mid, @progress-clr-edge);
+	border-radius: @progress-bar-border-radius;
+	// box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+	transition: width .6s ease;
+
+	// for demo only
+	animation: demo-start .4s;
+}
+
+.progress-bar-text {
+	position: absolute;
+	width: 100%;
+	left: 0;
+}
+
+
+@keyframes demo-start {
+	from {
+		width: 0;
+	}
+	to {
+		width: 20%;
+	}
+}
+
+// Variations
+// -------------------------
+
+// .progress-bar-success {
+// 	.progress-bar-variant(@progress-bar-success-bg);
+// }
+
+// .progress-bar-info {
+// 	.progress-bar-variant(@progress-bar-info-bg);
+// }
+
+// .progress-bar-warning {
+// 	.progress-bar-variant(@progress-bar-warning-bg);
+// }
+
+// .progress-bar-danger {
+// 	.progress-bar-variant(@progress-bar-danger-bg);
+// }

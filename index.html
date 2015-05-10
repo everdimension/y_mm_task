@@ -1,0 +1,224 @@
+<!doctype html>
+<html class="no-js" lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>No title</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+		<link href='http://fonts.googleapis.com/css?family=PT+Sans&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+		<link rel="stylesheet" href="css/normalize.min.css">
+		<link rel="stylesheet" href="css/boilerplate.css">
+		<link rel="stylesheet" href="css/main.css">
+
+		<!--[if lt IE 9]>
+			<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+			<script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+		<![endif]-->
+	</head>
+	<body>
+		<!--[if lt IE 8]>
+			<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+
+
+		<div class="container">
+			<div id="tasks" class="tasks-panel">
+				<section class="tasks-panel-control">
+					<ul class="tabs" id="tabs-panel"></ul>
+				</section>
+			
+				<section class="tasks-panel-content">
+					<article class="tab" id="progressTab">
+						<div class="progress-bar-example">
+							<div class="progress-bar-holder" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuetext="20%" aria-valuemax="100">
+								<div class="progress-bar" style="width: 20%;"></div>
+							</div>
+						</div>
+
+						Вступительная анимация только для демки. В реальности за &laquo;движение&raquo; отвечает transition.
+						Tab content one Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam necessitatibus earum beatae iusto deserunt vel iste quibusdam nesciunt saepe alias quos minima placeat error cupiditate possimus consequuntur sit eveniet nemo facere quasi officiis numquam, laborum minus. Quasi mollitia, dolor quos ipsam enim alias iste ex. Porro officiis laudantium corporis deserunt! In tempore asperiores possimus vitae earum! Illo error voluptatum, suscipit nam ad earum, praesentium exercitationem dolores libero blanditiis est atque. Recusandae cum accusantium laudantium magni, assumenda sequi. Asperiores, quod, sapiente.
+					</article>
+					<article class="tab" id="buttonTab">
+						<p class="example-intro">The button</p>
+						<p>
+							<button class="btn btn-task">Кнопка</button>
+						</p>
+						<p>
+							<button class="btn btn-task" disabled="disabled">Кнопка</button> (disabled)
+						</p>
+						<p>
+							<button class="btn btn-task btn-task-big">Кнопка</button> (большая)
+						</p>
+					</article>
+					<article class="tab" id="browsersTab">
+
+						<p class="example-intro">Если бы надпись Internet Explorer была в одну строчку, было бы гораздо проще выровнять по вертикали :)</p>
+
+
+						<ul class="browser-list browser-list-example">
+							<!-- 'nextElementSibling' works IE9+ -->
+							<!-- onerror event shows fallback text -->
+							<!-- .js class hides img tag, which -->
+							<!-- is visible by default in case javascript -->
+							<!-- is turned off as well -->
+							<!-- of course, this should be abstracted as a standalone javascript plugin -->
+
+							<li class="browser-list-item browser-list-chrome">
+								<img class="browser-list-trigger" src="img/browsers.png" alt="chrome browser" onerror="this.nextElementSibling.style.display = 'table-cell'">
+								<div class="browser-list-fallback">
+									<div>
+										<span class="chrome-letters">Ch</span><span class="chrome-letters">ro</span><span class="chrome-letters">me</span>
+									</div>
+								</div>
+								<span class="sr-only">Chrome</span>
+							</li>
+							<li class="browser-list-item browser-list-firefox">
+								<img class="browser-list-trigger" src="img/browsers.png" alt="firefox browser" onerror="this.nextElementSibling.style.display = 'table-cell'">
+								<div class="browser-list-fallback">
+									<div>Firefox</div>
+								</div>
+								<span class="sr-only">Firefox</span>
+							</li>
+							<li class="browser-list-item browser-list-opera">
+								<img class="browser-list-trigger" src="img/browsers.png" alt="opera browser" onerror="this.nextElementSibling.style.display = 'table-cell'">
+								<div class="browser-list-fallback">
+									<div>Opera</div>
+								</div>
+								<span class="sr-only">Opera</span>
+							</li>
+							<li class="browser-list-item browser-list-safari">
+								<img class="browser-list-trigger" src="img/browsers.png" alt="safari browser" onerror="this.nextElementSibling.style.display = 'table-cell'">
+								<div class="browser-list-fallback">
+									<div>Safari</div>
+								</div>
+								<span class="sr-only">Safari</span>
+							</li>
+							<li class="browser-list-item browser-list-ie">
+								<img class="browser-list-trigger" src="img/browsers.png" alt="ie browser" onerror="this.nextElementSibling.style.display = 'table-cell'">
+								<div class="browser-list-fallback">
+									<div>Internet<br>Explorer</div>
+								</div>
+								<span class="sr-only">Internet Explorer</span>
+							</li>
+						</ul>
+
+						<p>Ошибка загрузки картинки:</p>
+
+						<ul class="browser-list browser-list-example browser-list-fail">
+							<!-- works IE9+ -->
+
+							<li class="browser-list-item browser-list-chrome">
+								<img class="browser-list-trigger" src="img/browsers-fail.png" alt="chrome browser" onerror="this.nextElementSibling.style.display = 'table-cell'">
+								<div class="browser-list-fallback">
+									<div>
+										<span class="chrome-letters">Ch</span><span class="chrome-letters">ro</span><span class="chrome-letters">me</span>
+									</div>
+								</div>
+								<span class="sr-only">Chrome</span>
+							</li>
+							<li class="browser-list-item browser-list-firefox">
+								<img class="browser-list-trigger" src="img/browsers-fail.png" alt="firefox browser" onerror="this.nextElementSibling.style.display = 'table-cell'">
+								<div class="browser-list-fallback">
+									<div>Firefox</div>
+								</div>
+								<span class="sr-only">Firefox</span>
+							</li>
+							<li class="browser-list-item browser-list-opera">
+								<img class="browser-list-trigger" src="img/browsers-fail.png" alt="opera browser" onerror="this.nextElementSibling.style.display = 'table-cell'">
+								<div class="browser-list-fallback">
+									<div>Opera</div>
+								</div>
+								<span class="sr-only">Opera</span>
+							</li>
+							<li class="browser-list-item browser-list-safari">
+								<img class="browser-list-trigger" src="img/browsers-fail.png" alt="safari browser" onerror="this.nextElementSibling.style.display = 'table-cell'">
+								<div class="browser-list-fallback">
+									<div>Safari</div>
+								</div>
+								<span class="sr-only">Safari</span>
+							</li>
+							<li class="browser-list-item browser-list-ie">
+								<img class="browser-list-trigger" src="img/browsers-fail.png" alt="ie browser" onerror="this.nextElementSibling.style.display = 'table-cell'">
+								<div class="browser-list-fallback">
+									<div>Internet<br>Explorer</div>
+								</div>
+								<span class="sr-only">Internet Explorer</span>
+							</li>
+						</ul>
+
+
+					</article>
+
+					<article class="tab task-article" id="articleTab">
+						<p class="example-intro">
+							Пожалуй, для полноценного использованиия <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/columns">колоночного текста</a> ещё рановато.
+						</p>
+
+						<div class="grid">
+							<div class="col-half">
+								<h1>Тема: &laquo;Сюжетный анапест: основные моменты&raquo;</h1>
+							</div>
+						</div>
+						 
+						<div class="grid">
+							<div class="col-half">
+								<p>Нельзя восстановить истинной хронологической последовательности событий, потому что мелькание мыслей параллельно. Структура аллитерирует мелодический реформаторский пафос, однако дальнейшее развитие приемов декодирования мы находим в работах академика В.Виноградова. Аллюзия наблюдаема. Аллитерация, как бы это ни казалось парадоксальным, параллельна. Мифопорождающее текстовое устройство прочно вызывает эпитет, причём сам Тредиаковский свои стихи мыслил как &ldquo;стихотворное дополнение&rdquo; к книге Тальмана.</p>
+								
+								<p>Речевой акт традиционно осознаёт музыкальный дольник, но не рифмами. Различное расположение просветляет мелодический образ, таким образом постепенно смыкается с сюжетом. Силлабо-тоника, в первом приближении, просветляет мелодический ямб, таким образом в некоторых случаях образуются рефрены, кольцевые композиции, анафоры.</p>
+							</div>
+							
+							<div class="col-half">
+								<p>Представленный лексико-семантический анализ является психолингвистическим в своей основе, но мифопорождающее текстовое устройство аллитерирует мифологический генезис свободного стиха, об этом свидетельствуют краткость и завершенность формы, бессюжетность, своеобразие тематического развертывания.</p>
+								
+								<p>Драма, по определению отражает брахикаталектический стих, хотя в существование или актуальность этого он не верит, а моделирует собственную реальность. Лексика осознаёт литературный палимпсест, об этом свидетельствуют краткость и завершенность формы, бессюжетность, своеобразие тематического развертывания.</p>
+								
+								<ul class="hanging-list dash-list">
+									<li>Курит ли трупка мой</li>
+									<li><a href="#">из трупка тфой пихтишь</a></li>
+									<li><a href="#sdfs" class="ui-action" title="this does nothing and leads nowhere">Или мой кафе пил</a></li>
+									<li>тфой в щашешка сидишь</li>
+								</ul>
+							</div>
+						</div>
+
+					</article>
+				</section>
+			</div>
+		</div>
+
+		<div id="console" class="console-panel console-bottom">
+			<div class="console-output"></div>
+			<div class="form-wrapper">
+				<form class="console-form">
+					<div class="console-field">
+						<input class="console-input form-control" type="text">
+						<button class="btn btn-console console-submit">run</button>
+					</div>
+				</form>
+			</div>
+		</div>
+
+
+		<script type="text/template" id="nav-item-template">
+			<li class="{{isSelected}}"><a class="tab-toggle" data-tab="{{tabId}}" href="#{{tabId}}">{{tabName}}</a></li>	
+		</script>
+
+		<script type="text/template" id="console-output-template">
+			<p>{{msg}}</p>
+		</script>
+
+		<script src="js/plugins.js"></script>
+		<script src="js/helpers.js"></script>
+		<script src="js/stats/stats.js"></script>
+		<script src="js/tabs/tabs-view.js"></script>
+		<script src="js/tasks/tasks-view.js"></script>
+		<script src="js/tasks/tasks-collection.js"></script>
+		<script src="js/tasks/tasks-controller.js"></script>
+		<script src="js/console/page-console.js"></script>
+		<script src="js/app.js"></script>
+	</body>
+</html>

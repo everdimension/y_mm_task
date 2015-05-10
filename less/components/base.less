@@ -1,0 +1,94 @@
+body {
+	background-color: @main-bg;
+	font-size: @font-size-base;
+}
+
+a {
+	color: @link-clr;
+	text-decoration: underline;
+
+	&:hover,
+	&:focus {
+		color: @link-hover-clr;
+		text-decoration: none;
+	}
+
+	&:visited {
+		color: @link-visited-clr;
+	}
+
+	&:hover:visited {
+		color: @link-visited-hover-clr;
+	}
+
+	&:active,
+	&:hover:active {
+		color: @link-active-clr;
+	}
+
+	&:focus {
+		.tab-focus();
+	}
+}
+
+a.ui-action {
+
+	border-bottom-style: dashed;
+	border-bottom-width: 1px;
+	&,
+	&:hover,
+	&:focus,
+	&:visited, &:hover:visited {
+		color: @text-clr;
+		text-decoration: none;
+	}
+
+	&:hover {
+		border-bottom: none;
+	}
+
+	&:focus {
+		.tab-focus();
+	}
+}
+
+.container {
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 800px;
+	margin: 0 auto;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 50px;
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	clip: rect(0,0,0,0);
+	border: 0;
+}
+
+
+// example styles
+.browser-list.browser-list-example {
+	margin-top: 10px;
+	margin-bottom: 30px;
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.progress-bar-example {
+	width: 100%;
+	max-width: 300px;
+	margin-bottom: 20px;
+}
+
+p.example-intro {
+	margin-top: 0;
+}

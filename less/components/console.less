@@ -1,0 +1,64 @@
+
+// styles for "sticky" (to the bottom) console
+html {
+	min-height: 100%;
+	position: relative;
+}
+
+body {
+	margin-bottom: @console-height;
+}
+
+// general console panel styles
+.console-panel {
+	box-sizing: border-box;
+	font-family: Monaco, Consolas, monospace;
+	height: @console-height;
+	width: @console-width;
+	color: @console-clr;
+	background-color: @console-bg;
+	border: @console-border-width solid darken(@console-bg, 20%);
+}
+
+.console-bottom {
+	position: absolute;
+	bottom: 0;
+}
+
+.console-output {
+	position: relative;
+	box-sizing: border-box;
+	height: calc(~"100% - "@console-input-height);
+	padding: 20px;
+	overflow-y: auto;
+	p {
+		margin-top: 0;
+		margin-bottom: 10px;
+	}
+}
+
+.console-field {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	border-top: @console-divider-width solid darken(@console-bg, 20%);
+	&:before {
+		content: '>';
+		position: absolute;
+		left: 0;
+		width: 30px;
+		text-align: center;
+		line-height: @console-input-height;
+	}
+	.console-input {
+		padding-left: 30px;
+		background: @console-input-bg;
+		border: none;
+	}
+	.console-submit {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+}

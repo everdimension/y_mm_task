@@ -1,0 +1,38 @@
+@article-font-size: 1.2em;
+
+.task-article {
+	font: normal 14px/1.5 'PT Sans', serif;
+	font-weight: 400;
+	color: @text-clr;
+	background: #fafafa;
+
+	h1, h2, h3 {
+		margin-bottom: 30px;
+		line-height: 1;
+		font-weight: normal;
+	}
+
+	h1 {
+		font-size: 1.9em;
+	}
+
+	p {
+		text-indent: 1.2em;
+		margin-bottom: 30px;
+	}
+}
+
+.hanging-list {
+	padding-left: 0;
+}
+.dash-list {
+	list-style: none;
+	li {
+		position: relative;
+		&:before {
+			content: '\2014';
+			position: absolute;
+			left: -1.2em;
+		}
+	}
+}

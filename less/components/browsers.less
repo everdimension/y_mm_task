@@ -1,0 +1,92 @@
+@img-offset: 127px;
+
+@browser-item-size: 128px;
+
+@chrome-clr-one: #22a12a;
+@chrome-clr-two: #c90000;
+@chrome-clr-three: #f9d411;
+
+@firefox-clr: #f2a414;
+@opera-clr: #c10e0e;
+@safari-clr: #646464;
+@ie-clr: #036da3;
+
+.chrome-letters {
+	color: @chrome-clr-two;
+	&:first-child {
+		color: @chrome-clr-one;
+	}
+	&:last-child {
+		color: @chrome-clr-three;
+	}
+}
+
+.browser-list {
+	.clear-ul();
+	.clearfix();
+}
+
+.browser-list-item {
+	position: relative;
+	float: left;
+	width: @browser-item-size;
+	height: @browser-item-size;
+	background-image: url('../img/browsers.png');
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	@media (min-width: @screen-breakpoint) {
+		&:last-child {
+			float: right;
+		}
+	}
+	.js & .browser-list-trigger {
+		display: none;
+	}
+	.browser-list-fallback {
+		display: none;
+		// text-align: center;
+		vertical-align: middle;
+		// line-height: @browser-item-size;
+		width: @browser-item-size;
+		height: @browser-item-size;
+		> div {
+			margin-left: auto;
+			margin-right: auto;
+			width: 60px;
+		}
+	}
+}
+
+.browser-list-fail {
+	.browser-list-item {
+		background-image: url('../img/browsers-fail.png');
+	}
+}
+
+.browser-list-chrome {
+	background-position: 0 0;
+}	
+.browser-list-firefox {
+	background-position: -@img-offset 0;
+	.browser-list-fallback {
+		color: @firefox-clr;
+	}
+}
+.browser-list-opera {
+	background-position: 0 - (@img-offset * 2) 0;
+	.browser-list-fallback {
+		color: @opera-clr;
+	}
+}
+.browser-list-safari {
+	background-position: 0 - (@img-offset * 3) 0;
+	.browser-list-fallback {
+		color: @safari-clr;
+	}
+}
+.browser-list-ie {
+	background-position: 0 - (@img-offset * 4) 0;
+	.browser-list-fallback {
+		color: @ie-clr;
+	}
+}
