@@ -27,12 +27,12 @@
 
 		<div class="container">
 			<div id="tasks" class="tasks-panel">
-				<section class="tasks-panel-control">
-					<ul class="tabs" id="tabs-panel"></ul>
-				</section>
+				<nav class="tasks-panel-control">
+					<ul class="tabs" id="tabs-panel" role="tablist"></ul>
+				</nav>
 			
-				<section class="tasks-panel-content">
-					<article class="tab" id="progressTab">
+				<div class="tasks-panel-content">
+					<section class="tab" id="progressTab" aria-labelledby="label-progressTab">
 						<div class="progress-bar-example">
 							<div class="progress-bar-holder" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuetext="20%" aria-valuemax="100">
 								<div class="progress-bar" style="width: 20%;"></div>
@@ -41,8 +41,8 @@
 
 						Вступительная анимация только для демки. В реальности за &laquo;движение&raquo; отвечает transition.
 						Tab content one Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam necessitatibus earum beatae iusto deserunt vel iste quibusdam nesciunt saepe alias quos minima placeat error cupiditate possimus consequuntur sit eveniet nemo facere quasi officiis numquam, laborum minus. Quasi mollitia, dolor quos ipsam enim alias iste ex. Porro officiis laudantium corporis deserunt! In tempore asperiores possimus vitae earum! Illo error voluptatum, suscipit nam ad earum, praesentium exercitationem dolores libero blanditiis est atque. Recusandae cum accusantium laudantium magni, assumenda sequi. Asperiores, quod, sapiente.
-					</article>
-					<article class="tab" id="buttonTab">
+					</section>
+					<section class="tab" id="buttonTab" aria-labelledby="label-buttonTab">
 						<p class="example-intro">The button</p>
 						<p>
 							<button class="btn btn-task">Кнопка</button>
@@ -53,8 +53,8 @@
 						<p>
 							<button class="btn btn-task btn-task-big">Кнопка</button> (большая)
 						</p>
-					</article>
-					<article class="tab" id="browsersTab">
+					</section>
+					<section class="tab" id="browsersTab" aria-labelledby="label-browsersTab">
 
 						<p class="example-intro">Если бы надпись Internet Explorer была в одну строчку, было бы гораздо проще выровнять по вертикали :)</p>
 
@@ -151,11 +151,11 @@
 						</ul>
 
 
-					</article>
+					</section>
 
-					<article class="tab task-article" id="articleTab">
+					<section class="tab task-article" id="articleTab" aria-labelledby="label-articleTab">
 						<p class="example-intro">
-							Пожалуй, для полноценного использованиия <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/columns">колоночного текста</a> ещё рановато.
+							Пожалуй, для полноценного использования <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/columns">колоночного текста</a> ещё рановато.
 						</p>
 
 						<div class="grid">
@@ -185,8 +185,8 @@
 							</div>
 						</div>
 
-					</article>
-				</section>
+					</section>
+				</div>
 			</div>
 		</div>
 
@@ -204,7 +204,7 @@
 
 
 		<script type="text/template" id="nav-item-template">
-			<li class="{{isSelected}}"><a class="tab-toggle" data-tab="{{tabId}}" href="#{{tabId}}">{{tabName}}</a></li>	
+			<li role="presentation" class="{{isSelected}}"><a class="tab-toggle" id="label-{{tabId}}" role="tab" aria-controls="{{tabId}}" aria-selected="{{ariaSelected}}" data-tab="{{tabId}}" href="#{{tabId}}">{{tabName}}</a></li>	
 		</script>
 
 		<script type="text/template" id="console-output-template">

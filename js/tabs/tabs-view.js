@@ -33,7 +33,12 @@
 				isCurrent = false;
 			}
 
-			html += self.template.replace(/{{tabId}}/g, tab.elementId).replace('{{isActive}}').replace('{{tabName}}', tab.tabName).replace('{{isSelected}}', isCurrent ? 'active' : '');
+			html += self.template
+				.replace(/{{tabId}}/g, tab.elementId)
+				.replace('{{isActive}}')
+				.replace('{{tabName}}', tab.tabName)
+				.replace('{{isSelected}}', isCurrent ? 'active' : '')
+				.replace('{{ariaSelected}}', isCurrent);
 		});
 		self.el.innerHTML = html;
 
